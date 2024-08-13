@@ -9,12 +9,11 @@ import Foundation
 
 class ColorAndLegoPartVM: ObservableObject {
     
-    @Published private var colorAndSetPartResults = [PartsAndColor.PartsAndColorResults]()
-    
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     
     @Published var partNumber = ""
+    @Published var colorAndSetPartResults = [PartsAndColor.PartsAndColorResults]()
     
     private let apiManager = RebrickableAPI()
     

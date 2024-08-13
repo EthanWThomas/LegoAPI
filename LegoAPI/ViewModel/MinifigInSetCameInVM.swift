@@ -8,13 +8,12 @@
 import Foundation
 
 class MinifigInSetCameInVM: ObservableObject {
-    
-    @Published private var minifigInSetResult = [Lego.LegoResults]()
      
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     
     @Published var setNumber = ""
+    @Published var minifigInSetResult = [Lego.LegoResults]()
     
     private let apiManager = RebrickableAPI()
     

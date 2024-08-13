@@ -8,13 +8,12 @@
 import Foundation
 
 class InventoryLegoPartVM: ObservableObject {
- 
-    @Published private var inventoryPartResults = [InventoryLegoParts.PartResult]()
     
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     
     @Published var setNumber = ""
+    @Published var inventoryPartResults = [InventoryLegoParts.PartResult]()
     
     private let apiManager = RebrickableAPI()
     

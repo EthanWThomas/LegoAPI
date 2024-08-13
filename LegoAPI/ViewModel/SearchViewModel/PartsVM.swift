@@ -8,13 +8,12 @@
 import Foundation
 
 class PartsVM: ObservableObject {
-    
-    @Published private var legoPartsResult = [AllParts.PartResults]()
      
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
+    @Published var legoPartsResult = [AllParts.PartResults]()
     
     private let apiManager = RebrickableAPI()
     

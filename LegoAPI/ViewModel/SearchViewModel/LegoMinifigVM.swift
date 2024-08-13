@@ -9,12 +9,12 @@ import Foundation
 
 class LegoMinifigSearchVM: ObservableObject {
     
-    @Published private var minifigeResult = [Lego.LegoResults]()
-    
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
+    @Published var minifigeResult = [Lego.LegoResults]()
+    @Published var minifige: [Lego.LegoResults]?
     
     private let apiManager = RebrickableAPI()
     

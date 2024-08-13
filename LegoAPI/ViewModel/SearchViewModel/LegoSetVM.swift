@@ -9,12 +9,11 @@ import Foundation
 
 class LegoSetVM: ObservableObject {
     
-    @Published private var legoSetResults = [LegoSet.SetResults]()
-    
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
+    @Published var legoSetResults = [LegoSet.SetResults]()
     
     private let apiManager = RebrickableAPI()
     
