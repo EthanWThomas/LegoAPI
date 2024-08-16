@@ -56,8 +56,6 @@ extension InventoryLegoParts {
                 case isTrans = "is_trans"
                 case externalIds = "external_ids"
             }
-            
-           
         }
     }
 }

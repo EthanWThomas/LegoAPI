@@ -46,7 +46,7 @@ class MinifigInSetCameInVM: ObservableObject {
             return minifigInSetResult
         } else {
             return minifigInSetResult.filter { result in
-                result.setNum.range(of: setNumber, options: .caseInsensitive) != nil
+                result.setNum?.range(of: setNumber, options: .caseInsensitive) != nil
             }
         }
     }

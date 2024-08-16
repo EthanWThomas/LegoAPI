@@ -11,13 +11,12 @@ struct Lego: Codable {
     let results: [LegoResults]
     
     struct LegoResults: Codable {
-        
-        let setNum: String
+        let setNum: String?
         let name: String?
-        let numberOfPart: Int
+        let numberOfPart: Int?
         let setImageURL: String?
         let setURL: String?
-        let lastModifledDT: String
+        let lastModifledDT: String?
         
         enum CodingKeys: String, CodingKey {
             case setNum = "set_num"

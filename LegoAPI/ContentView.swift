@@ -9,13 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "cart.fill")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack {
+            Image(systemName: "person.wave.2")
+                .font(.largeTitle)
+            VStack(alignment: .leading) {
+                Text("Plus")
+                    .font(.largeTitle)
+                Text("Name")
+                    .font(.subheadline)
+            }
         }
-        .padding()
     }
 }
 

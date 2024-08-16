@@ -11,19 +11,38 @@ struct RebrickableAPI {
     
     static private var apiKey = "428202502f439447097e345473057945"
     
-    // MARK: - Get all Minifiger
-    func getMinfigs(with searchTerm: String) async throws -> [Lego.LegoResults] {
+    // MARK: - Search all Minifiger
+    func searchMinfigs(with searchTerm: String) async throws -> Lego.LegoResults {
         
         guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/?key=\(RebrickableAPI.apiKey)")
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
         switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
-            case 200: return try JSONDecoder().decode([Lego.LegoResults].self, from: data)
+            case 200: return try JSONDecoder().decode(Lego.LegoResults.self, from: data)
+            case 201, 204, 400, 401, 403, 404, 429: throw try JSONDecoder().decode(ErrorResponse.self, from: data)
+            default: throw ResponseError.unownedErrorOccurred
+        }
+    }
+    
+    // MARK: - Get all Minifigs
+    func getMinifig() async throws -> Lego {
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/?key=\(RebrickableAPI.apiKey)")
+        else { throw RequstError.failedToCreateURL }
+        
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
+            case 200: return try JSONDecoder().decode(Lego.self, from: data)
             case 201, 204, 400, 401, 403, 404, 429: throw try JSONDecoder().decode(ErrorResponse.self, from: data)
             default: throw ResponseError.unownedErrorOccurred
         }
@@ -36,6 +55,7 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -54,6 +74,7 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -71,6 +92,7 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -88,6 +110,7 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -106,6 +129,7 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -124,6 +148,7 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let (data, response) = try await URLSession.shared.data(for: request)

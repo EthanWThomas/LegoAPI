@@ -13,15 +13,14 @@ class LegoMinifigSearchVM: ObservableObject {
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
-    @Published var minifigeResult = [Lego.LegoResults]()
+    @Published var minifigeResult: Lego.LegoResults?
     @Published var minifige: [Lego.LegoResults]?
     
     private let apiManager = RebrickableAPI()
     
-    var searchLegoMinifig: [Lego.LegoResults] { getsearchResult() }
+    var searchLegoMinifig: Lego.LegoResults { getsearchResult() }
     
     func searchMinifig() {
-        
         isLoading = true
         
         Task { [weak self] in
@@ -29,11 +28,11 @@ class LegoMinifigSearchVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-                let results = try await self?.apiManager.getMinfigs(with: searchText)
+                let results = try await self?.apiManager.searchMinfigs(with: searchText)
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in
-                    self?.minifigeResult = results!
+                    self?.minifigeResult = results
                 }
             } catch {
                 print("No Result Found \(error)")
@@ -43,13 +42,28 @@ class LegoMinifigSearchVM: ObservableObject {
         }
     }
     
-    func getsearchResult() -> [Lego.LegoResults] {
-        if searchText.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return minifigeResult
-        } else {
-            return minifigeResult.filter { result in
-                result.name?.range(of: searchText, options: .caseInsensitive) != nil
+    @MainActor
+    func getMinifiger() {
+        isLoading = true
+        
+        Task {
+            do {
+                self.minifige = try await apiManager.getMinifig().results
+                self.isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
             }
+        }
+    }
+    
+    func getsearchResult() -> Lego.LegoResults {
+        if searchText.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            return minifigeResult!
+        } else {
+            // TODO: fix it
+            return minifigeResult!
         }
     }
 }
