@@ -27,7 +27,7 @@ class MinifigInSetCameInVM: ObservableObject {
                 guard let minifigSetNumber = self?.setNumber
                 else { return }
                 
-                let results = try await self?.apiManager.getAllMinifigsSetCameIn(setNumber: minifigSetNumber)
+                let results = try await self?.apiManager.getAllMinifigsSetCameIn(setNumber: minifigSetNumber).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in

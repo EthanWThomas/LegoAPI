@@ -11,7 +11,6 @@ class InventoryLegoPartVM: ObservableObject {
     
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
-    
     @Published var setNumber = ""
     @Published var inventoryPartResults = [InventoryLegoParts.PartResult]()
     
@@ -27,7 +26,7 @@ class InventoryLegoPartVM: ObservableObject {
                 guard let inventoryLegoPart = self?.setNumber
                 else { return }
                 
-                let results = try await self?.apiManager.getInvetoryPartInASet(setNum: inventoryLegoPart)
+                let results = try await self?.apiManager.getInvetoryPartInASet(setNum: inventoryLegoPart).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in

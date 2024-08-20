@@ -28,7 +28,7 @@ class PartsVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-                let results = try await self?.apiManager.getParts(with: searchText)
+                let results = try await self?.apiManager.getParts(with: searchText).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in

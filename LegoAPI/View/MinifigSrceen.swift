@@ -13,12 +13,14 @@ struct MinifigSrceen: View {
     let columns: [GridItem] = Array(repeating: GridItem(.fixed(100), spacing: 5), count: 2)
     
     var body: some View {
-        listOfMinifig
+        NavigationStack {
+            listOfMinifig
+        }
     }
-    
+   
     private var listOfMinifig: some View {
         ScrollView {
-            if let minifig = viewModel.minifige {
+            if let minifig = viewModel.searchLegoMinifig {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 300), spacing: 1)]) {
                     ForEach(minifig, id: \.name) { minifiger in
                         listItem(for: minifiger)
@@ -27,32 +29,33 @@ struct MinifigSrceen: View {
                                 Rectangle()
                                     .stroke(Color.gray)
                             )
-//                        LazyVGrid(columns: columns, content: {
-//                            listItem(for: minifiger)
-//                        })
                     }
                 }
                 .padding()
             }
         }
+        .searchable(
+            text: $viewModel.searchText,
+            placement: .navigationBarDrawer(displayMode: .always))
+        .onSubmit(of: .search) {
+            viewModel.searchMinifig()
+        }
         .onAppear {
             viewModel.getMinifiger()
         }
-        //        NavigationStack {
-        //            VStack {
-        //                if let minifig = viewModel.minifige {
-        //                    ForEach(minifig, id: \.name) { minifig in
-        //                        listItem(for: minifig)
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
-        //        .onSubmit(of: .search) {
-        //            viewModel.
-        //        }
     }
     
+//    func lazyVGridForItem(minifiger: Lego.LegoResults) -> some View {
+//        LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 300), spacing: 1)]) {
+//            listItem(for: minifiger)
+//                .frame(width: 150, height: 150)
+//                .background(
+//                    Rectangle()
+//                        .stroke(Color.gray)
+//                )
+//        }
+//    }
+//    
     func listItem(for minifiger: Lego.LegoResults) -> some View {
         MinifigerPreviewView(
             name: minifiger.name ?? "no name",

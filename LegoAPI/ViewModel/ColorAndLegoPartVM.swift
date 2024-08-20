@@ -29,7 +29,7 @@ class ColorAndLegoPartVM: ObservableObject {
                 else { return }
                 
                 let results = try await
-                self?.apiManager.getListOfAllColorAndPart(partNum: partAndColorNumber)
+                self?.apiManager.getListOfAllColorAndPart(partNum: partAndColorNumber).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in

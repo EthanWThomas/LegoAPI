@@ -11,15 +11,18 @@ class LegoMinifigSearchVM: ObservableObject {
     
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
-    
     @Published var searchText = ""
-    @Published var minifigeResult: Lego.LegoResults?
+    @Published var minifigeResult = [Lego.LegoResults]()
     @Published var minifige: [Lego.LegoResults]?
     
     private let apiManager = RebrickableAPI()
     
-    var searchLegoMinifig: Lego.LegoResults { getsearchResult() }
+    var searchLegoMinifig: [Lego.LegoResults]? { // Optional return type
+            get { return getsearchResult() }
+        }
     
+    
+    @MainActor
     func searchMinifig() {
         isLoading = true
         
@@ -28,11 +31,33 @@ class LegoMinifigSearchVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-                let results = try await self?.apiManager.searchMinfigs(with: searchText)
+                let results = try await self?.apiManager.searchMinfigs(with: searchText).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in
-                    self?.minifigeResult = results
+                    self?.minifigeResult = results!
+                }
+            } catch {
+                print("No Result Found \(error)")
+                self?.errorMessage = error.localizedDescription
+                self?.isLoading = false
+            }
+        }
+    }
+    
+    func searchMinifigWithId() {
+        isLoading = true
+        
+        Task { [weak self] in
+            do {
+                guard let searchText = self?.searchText
+                else { return }
+                
+                let results = try await self?.apiManager.getMinifigerWithThemeId(with: searchText).results
+                self?.isLoading = false
+                
+                await MainActor.run { [weak self] in
+                    self?.minifigeResult = results!
                 }
             } catch {
                 print("No Result Found \(error)")
@@ -58,12 +83,14 @@ class LegoMinifigSearchVM: ObservableObject {
         }
     }
     
-    func getsearchResult() -> Lego.LegoResults {
+    func getsearchResult() -> [Lego.LegoResults]? {
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-            return minifigeResult!
+            return minifigeResult
         } else {
             // TODO: fix it
-            return minifigeResult!
+            return minifigeResult.filter { result in
+                result.name?.range(of: searchText, options: .caseInsensitive) != nil
+            }
         }
     }
 }

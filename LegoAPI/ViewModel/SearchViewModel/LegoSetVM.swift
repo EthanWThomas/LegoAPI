@@ -28,7 +28,7 @@ class LegoSetVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-                let results = try await self?.apiManager.getAllLegoSets(with: searchText)
+                let results = try await self?.apiManager.getAllLegoSets(with: searchText).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in
