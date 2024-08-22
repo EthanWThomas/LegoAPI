@@ -12,6 +12,9 @@ class LegoMinifigSearchVM: ObservableObject {
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     @Published var searchText = ""
+    @Published var themeId = ""
+    
+    @Published var legotheme: [Themes.ThemesResults]?
     @Published var minifigeResult = [Lego.LegoResults]()
     @Published var minifige: [Lego.LegoResults]?
     
@@ -31,6 +34,7 @@ class LegoMinifigSearchVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
+
                 let results = try await self?.apiManager.searchMinfigs(with: searchText).results
                 self?.isLoading = false
                 
@@ -45,7 +49,8 @@ class LegoMinifigSearchVM: ObservableObject {
         }
     }
     
-    func searchMinifigWithId() {
+    @MainActor
+    func searchMinifigWithThemeId(with theme: String) {
         isLoading = true
         
         Task { [weak self] in
@@ -53,7 +58,10 @@ class LegoMinifigSearchVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-                let results = try await self?.apiManager.getMinifigerWithThemeId(with: searchText).results
+                guard let themeId = self?.themeId
+                else { return }
+                
+                let results = try await self?.apiManager.getMinifigerWithThemeId(theme: theme, with: searchText).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in
@@ -63,6 +71,22 @@ class LegoMinifigSearchVM: ObservableObject {
                 print("No Result Found \(error)")
                 self?.errorMessage = error.localizedDescription
                 self?.isLoading = false
+            }
+        }
+    }
+    
+    @MainActor
+    func gettheme() {
+        isLoading = true
+        
+        Task {
+            do {
+                self.legotheme = try await apiManager.returnAllThemes().results
+                self.isLoading = false
+            } catch {
+                print(error)
+                errorMessage = error.localizedDescription
+                self.isLoading = false
             }
         }
     }

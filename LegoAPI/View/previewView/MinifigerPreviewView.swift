@@ -11,6 +11,7 @@ struct MinifigerPreviewView: View {
     let name: String
     let setNum: String
     
+    let numberOfpart: Int
     let seturl: URL?
     //    let setImageURL: String
     
@@ -24,10 +25,15 @@ struct MinifigerPreviewView: View {
     var details: some View {
         VStack(alignment: .leading) {
             Text(name)
-                .font(.headline)
                 .lineLimit(1)
-            Text(setNum)
-                .bold()
+                .padding()
+            HStack {
+                Text(setNum)
+                    .foregroundStyle(Color("figNumberColor"))
+//                    .font(.subheadline)
+                    .fontWeight(.light)
+                Text("(\(numberOfpart.formatted(.number)))part")
+            }
         }
     }
     
@@ -41,7 +47,7 @@ struct MinifigerPreviewView: View {
                         .resizable()
                         .clipShape(RoundedRectangle(cornerRadius: 5))
                 default:
-                    Image(systemName: "x.square.fill")
+                    Image("yellowMinifiger")
                         .resizable()
                         .foregroundColor(.red)
             }

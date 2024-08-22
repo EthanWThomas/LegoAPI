@@ -29,6 +29,13 @@
 		79936C6A2C670B2200609F33 /* InventoryLegoPartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79936C692C670B2200609F33 /* InventoryLegoPartVM.swift */; };
 		79936C712C6B524100609F33 /* MinifigSrceen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79936C702C6B524100609F33 /* MinifigSrceen.swift */; };
 		79936CBA2C6DECBA00609F33 /* MinifigerPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79936CB92C6DECBA00609F33 /* MinifigerPreviewView.swift */; };
+		79E40C802C75DADB00348DFF /* LegoSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C7F2C75DADB00348DFF /* LegoSetView.swift */; };
+		79E40C822C75DAFF00348DFF /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C812C75DAFF00348DFF /* SearchBarView.swift */; };
+		79E40C862C77224900348DFF /* PickerVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C852C77224900348DFF /* PickerVIew.swift */; };
+		79E40C882C772D0B00348DFF /* TabNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C872C772D0B00348DFF /* TabNavigation.swift */; };
+		79E40C8A2C772D6E00348DFF /* LegoPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C892C772D6E00348DFF /* LegoPartView.swift */; };
+		79E40C8C2C772E1000348DFF /* MinifigerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C8B2C772E1000348DFF /* MinifigerDetailView.swift */; };
+		79E40C8E2C772EB400348DFF /* LegoSetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C8D2C772EB400348DFF /* LegoSetDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +62,13 @@
 		79936C692C670B2200609F33 /* InventoryLegoPartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryLegoPartVM.swift; sourceTree = "<group>"; };
 		79936C702C6B524100609F33 /* MinifigSrceen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinifigSrceen.swift; sourceTree = "<group>"; };
 		79936CB92C6DECBA00609F33 /* MinifigerPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinifigerPreviewView.swift; sourceTree = "<group>"; };
+		79E40C7F2C75DADB00348DFF /* LegoSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoSetView.swift; sourceTree = "<group>"; };
+		79E40C812C75DAFF00348DFF /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		79E40C852C77224900348DFF /* PickerVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerVIew.swift; sourceTree = "<group>"; };
+		79E40C872C772D0B00348DFF /* TabNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigation.swift; sourceTree = "<group>"; };
+		79E40C892C772D6E00348DFF /* LegoPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoPartView.swift; sourceTree = "<group>"; };
+		79E40C8B2C772E1000348DFF /* MinifigerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinifigerDetailView.swift; sourceTree = "<group>"; };
+		79E40C8D2C772EB400348DFF /* LegoSetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoSetDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				79936C702C6B524100609F33 /* MinifigSrceen.swift */,
+				79E40C8B2C772E1000348DFF /* MinifigerDetailView.swift */,
+				79E40C7F2C75DADB00348DFF /* LegoSetView.swift */,
+				79E40C892C772D6E00348DFF /* LegoPartView.swift */,
+				79E40C8D2C772EB400348DFF /* LegoSetDetailView.swift */,
+				79E40C7E2C75DAA200348DFF /* Componets */,
 				79936C6B2C670B3000609F33 /* previewView */,
 			);
 			path = View;
@@ -183,6 +202,16 @@
 			children = (
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		79E40C7E2C75DAA200348DFF /* Componets */ = {
+			isa = PBXGroup;
+			children = (
+				79E40C812C75DAFF00348DFF /* SearchBarView.swift */,
+				79E40C852C77224900348DFF /* PickerVIew.swift */,
+				79E40C872C772D0B00348DFF /* TabNavigation.swift */,
+			);
+			path = Componets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,18 +290,25 @@
 				79936C382C62E4F600609F33 /* ContentView.swift in Sources */,
 				79936C522C640E2800609F33 /* Color.swift in Sources */,
 				79936C612C65730C00609F33 /* LegoSetVM.swift in Sources */,
+				79E40C8C2C772E1000348DFF /* MinifigerDetailView.swift in Sources */,
 				79936C362C62E4F600609F33 /* LegoAPIApp.swift in Sources */,
 				79936C482C62E6CD00609F33 /* Lego.swift in Sources */,
+				79E40C8E2C772EB400348DFF /* LegoSetDetailView.swift in Sources */,
 				79936CBA2C6DECBA00609F33 /* MinifigerPreviewView.swift in Sources */,
 				79936C5C2C6553AD00609F33 /* PartsAndColor.swift in Sources */,
 				79936C5A2C6422CB00609F33 /* RebrickableAPI.swift in Sources */,
 				79936C712C6B524100609F33 /* MinifigSrceen.swift in Sources */,
+				79E40C802C75DADB00348DFF /* LegoSetView.swift in Sources */,
 				79936C682C657D0100609F33 /* ColorAndLegoPartVM.swift in Sources */,
 				79936C542C64108200609F33 /* Themes.swift in Sources */,
 				79936C662C6579E100609F33 /* MinifigInSetCameInVM.swift in Sources */,
 				79936C5F2C6559FC00609F33 /* LegoMinifigVM.swift in Sources */,
+				79E40C862C77224900348DFF /* PickerVIew.swift in Sources */,
 				79936C502C63663500609F33 /* Part.swift in Sources */,
+				79E40C822C75DAFF00348DFF /* SearchBarView.swift in Sources */,
 				79936C6A2C670B2200609F33 /* InventoryLegoPartVM.swift in Sources */,
+				79E40C8A2C772D6E00348DFF /* LegoPartView.swift in Sources */,
+				79E40C882C772D0B00348DFF /* TabNavigation.swift in Sources */,
 				79936C4A2C63640D00609F33 /* InventoryLegoParts.swift in Sources */,
 				79936C562C64120C00609F33 /* LegoSet.swift in Sources */,
 			);

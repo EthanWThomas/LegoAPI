@@ -14,7 +14,7 @@ struct RebrickableAPI {
     // MARK:  Minifiger request
     func searchMinfigs(with searchTerm: String) async throws -> Lego {
         
-        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/?key=\(RebrickableAPI.apiKey)")
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/?search=\(searchTerm)&key=\(RebrickableAPI.apiKey)")
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
@@ -47,8 +47,8 @@ struct RebrickableAPI {
         }
     }
     
-    func getMinifigerWithThemeId(with id: String) async throws -> Lego {
-        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/?key=\(RebrickableAPI.apiKey)")
+    func getMinifigerWithThemeId(theme id: String, with searchTerm: String) async throws -> Lego {
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/?in_theme_id=\(id)&search=\(searchTerm)&key=\(RebrickableAPI.apiKey)")
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
