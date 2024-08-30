@@ -64,6 +64,24 @@ struct RebrickableAPI {
         }
     }
     
+    // Get a list of all Inventory Parts in this Minifig.
+    func getMinifigerInvetory(setNum: String) async throws -> AllParts {
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/\(setNum)/parts/?key=\(RebrickableAPI.apiKey)")
+        else { throw RequstError.failedToCreateURL }
+        
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
+            case 200: return try JSONDecoder().decode(AllParts.self, from: data)
+            case 201, 204, 400, 401, 403, 404, 429: throw try JSONDecoder().decode(ErrorResponse.self, from: data)
+            default: throw ResponseError.unownedErrorOccurred
+        }
+    }
+    
     // MARK: - Get all Minifigs in all the sets it came in
     func getAllMinifigsSetCameIn(setNumber: String) async throws -> Lego {
         
@@ -71,9 +89,9 @@ struct RebrickableAPI {
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+//        request.httpMethod = "GET"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        
         let (data, response) = try await URLSession.shared.data(for: request)
         
         switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
@@ -122,7 +140,25 @@ struct RebrickableAPI {
     
     // MARK: - Get all Lego sets
     func getAllLegoSets(with searchTerm: String) async throws -> LegoSet {
-        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/sets/?key=\(RebrickableAPI.apiKey)")
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/sets/?search=\(searchTerm)&key=\(RebrickableAPI.apiKey)")
+        else { throw RequstError.failedToCreateURL }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
+            case 200: return try JSONDecoder().decode(LegoSet.self, from: data)
+            case 201, 204, 400, 401, 403, 404, 429: throw try JSONDecoder().decode(ErrorResponse.self, from: data)
+            default: throw ResponseError.unownedErrorOccurred
+        }
+    }
+    
+    // MARK: - Get Specific Set
+    func getSpecificSet(with setNumber: String) async throws -> LegoSet {
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/sets/\(setNumber)?key=\(RebrickableAPI.apiKey)")
         else { throw RequstError.failedToCreateURL }
         
         var request = URLRequest(url: url)
@@ -186,6 +222,5 @@ enum ResponseError: Error {
 }
 
 struct ErrorResponse: Error, Decodable {
-    let status: Int
-    let resson: String
+    let detail: String
 }

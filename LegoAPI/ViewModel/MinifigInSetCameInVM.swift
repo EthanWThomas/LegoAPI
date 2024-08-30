@@ -14,10 +14,13 @@ class MinifigInSetCameInVM: ObservableObject {
     
     @Published var setNumber = ""
     @Published var minifigInSetResult = [Lego.LegoResults]()
+    @Published var minifigInSet: [Lego.LegoResults]?
     
     private let apiManager = RebrickableAPI()
     
-    var searchLegoMinifigInSet: [Lego.LegoResults] { getsearchResult() }
+    var searchLegoMinifigInSet: [Lego.LegoResults]? { 
+        get { return getsearchResult() }
+    }
     
     func searchIdforMinifiger() {
         isLoading = true
@@ -37,6 +40,22 @@ class MinifigInSetCameInVM: ObservableObject {
                 print("No Result Found \(error)")
                 self?.errorMessage = error.localizedDescription
                 self?.isLoading = false
+            }
+        }
+    }
+    
+    @MainActor
+    func getMinifigInSetCameIn(figNumber: String) {
+        isLoading = true
+        
+        Task {
+            do {
+                self.minifigInSet = try await apiManager.getAllMinifigsSetCameIn(setNumber: figNumber).results
+                self.isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
             }
         }
     }

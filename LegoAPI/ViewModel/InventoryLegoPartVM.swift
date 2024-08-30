@@ -45,7 +45,7 @@ class InventoryLegoPartVM: ObservableObject {
             return inventoryPartResults
         } else {
             return inventoryPartResults.filter { result in
-                result.part.partNumber.range(of: setNumber, options: .caseInsensitive) != nil
+                result.part.partNumber?.range(of: setNumber, options: .caseInsensitive) != nil
             }
         }
     }

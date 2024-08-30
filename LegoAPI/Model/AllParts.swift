@@ -10,12 +10,13 @@ import Foundation
 struct AllParts: Codable {
     let results: [PartResults]
     
+    
     struct PartResults: Codable {
-        let partNumber: String
-        let name: String
-        let partCatId: String
-        let partImageUrl: String
-        let externalIds: ExternalIds
+        let partNumber: String?
+        let name: String?
+        let partCatId: String?
+        let partImageUrl: String?
+        let externalIds: ExternalIds?
         
         enum CodingKeys: String, CodingKey {
             case partNumber = "part_num"

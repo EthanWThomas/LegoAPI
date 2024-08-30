@@ -14,13 +14,14 @@ class LegoSetVM: ObservableObject {
     
     @Published var searchText = ""
     @Published var legoSetResults = [LegoSet.SetResults]()
+    @Published var legoSet: [LegoSet.SetResults]?
     
     private let apiManager = RebrickableAPI()
     
     var searchLegoSet: [LegoSet.SetResults] { getsearchResult() }
     
+    @MainActor
     func seacrhLegoSet() {
-        
         isLoading = true
         
         Task { [weak self] in
@@ -42,12 +43,40 @@ class LegoSetVM: ObservableObject {
         }
     }
     
+    func getLegoSet() {
+        isLoading = true
+        Task {
+            do {
+                self.legoSet = try await apiManager.getAllLegoSets(with: searchText).results
+                isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
+        }
+    }
+    
+    func getSpecificLegoSet() {
+        isLoading = true
+        Task {
+            do {
+                self.legoSet = try await apiManager.getSpecificSet(with: searchText).results
+                isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
+        }
+    }
+    
     func getsearchResult() -> [LegoSet.SetResults] {
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return legoSetResults
         } else {
             return legoSetResults.filter { result in
-                result.name.range(of: searchText, options: .caseInsensitive) != nil
+                result.name?.range(of: searchText, options: .caseInsensitive) != nil
             }
         }
     }

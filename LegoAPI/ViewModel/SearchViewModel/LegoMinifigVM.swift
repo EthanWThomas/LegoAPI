@@ -11,12 +11,15 @@ class LegoMinifigSearchVM: ObservableObject {
     
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
+    
     @Published var searchText = ""
     @Published var themeId = ""
+    @Published var setNumber = ""
     
-    @Published var legotheme: [Themes.ThemesResults]?
     @Published var minifigeResult = [Lego.LegoResults]()
     @Published var minifige: [Lego.LegoResults]?
+    
+    
     
     private let apiManager = RebrickableAPI()
     
@@ -71,22 +74,6 @@ class LegoMinifigSearchVM: ObservableObject {
                 print("No Result Found \(error)")
                 self?.errorMessage = error.localizedDescription
                 self?.isLoading = false
-            }
-        }
-    }
-    
-    @MainActor
-    func gettheme() {
-        isLoading = true
-        
-        Task {
-            do {
-                self.legotheme = try await apiManager.returnAllThemes().results
-                self.isLoading = false
-            } catch {
-                print(error)
-                errorMessage = error.localizedDescription
-                self.isLoading = false
             }
         }
     }

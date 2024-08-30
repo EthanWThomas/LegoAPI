@@ -10,11 +10,11 @@ import Foundation
 extension InventoryLegoParts.Part.ColorOFPart {
     
     struct ColorExternalIDs: Codable {
-        let brickLink: BrickLink
-        let brickOwl: BrickOwl
-        let lego: Lego
-        let peeron: Peeron
-        let lDraw: LDraw
+        let brickLink: BrickLink?
+        let brickOwl: BrickOwl?
+        let lego: Lego?
+        let peeron: Peeron?
+        let lDraw: LDraw?
         
         enum CodingKeys: String, CodingKey {
             case brickLink = "BrickLink"
@@ -25,8 +25,8 @@ extension InventoryLegoParts.Part.ColorOFPart {
         }
         
         struct BrickLink: Codable {
-            let extIds: [Int]
-            let extDescrs: [[String]]
+            let extIds: [Int]?
+            let extDescrs: [[String]]?
             
             enum CodingKeys: String, CodingKey {
                 case extIds = "ext_ids"
@@ -35,8 +35,8 @@ extension InventoryLegoParts.Part.ColorOFPart {
         }
         
         struct BrickOwl: Codable {
-            let extIds: [Int]
-            let extDescrs: [[String]]
+            let extIds: [Int]?
+            let extDescrs: [[String]]?
             
             enum CodingKeys: String, CodingKey {
                 case extIds = "ext_ids"
@@ -45,8 +45,8 @@ extension InventoryLegoParts.Part.ColorOFPart {
         }
         
         struct Lego: Codable {
-            let extIds: [Int]
-            let extDescrs: [[String]]
+            let extIds: [Int]?
+            let extDescrs: [[String]]?
             
             enum CodingKeys: String, CodingKey {
                 case extIds = "ext_ids"
@@ -56,7 +56,7 @@ extension InventoryLegoParts.Part.ColorOFPart {
         
         struct Peeron: Codable {
             let extIds: [Int]?
-            let extDescrs: [[String]]
+            let extDescrs: [[String]]?
             
             enum CodingKeys: String, CodingKey {
                 case extIds = "ext_ids"
@@ -65,8 +65,8 @@ extension InventoryLegoParts.Part.ColorOFPart {
         }
         
         struct LDraw: Codable {
-            let extIds: [Int]
-            let extDescrs: [[String]]
+            let extIds: [Int]?
+            let extDescrs: [[String]]?
             
             enum CodingKeys: String, CodingKey {
                 case extIds = "ext_ids"

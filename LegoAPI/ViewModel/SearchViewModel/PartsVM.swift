@@ -13,7 +13,9 @@ class PartsVM: ObservableObject {
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
+    @Published var setNumber = ""
     @Published var legoPartsResult = [AllParts.PartResults]()
+    @Published var part: [AllParts.PartResults]?
     
     private let apiManager = RebrickableAPI()
     
@@ -42,12 +44,43 @@ class PartsVM: ObservableObject {
         }
     }
     
+    @MainActor
+    func getPart() {
+        isLoading = true
+        Task {
+            do {
+                self.part = try await apiManager.getParts(with: searchText).results
+                isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
+        }
+    }
+    
+    @MainActor
+    func getminifigePart(figNumber: String) {
+        isLoading = true
+        
+        Task {
+            do {
+                self.part = try await apiManager.getMinifigerInvetory(setNum: figNumber).results
+                self.isLoading = false
+            } catch {
+                print(error)
+                errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
+        }
+    }
+    
     func getsearchResult() -> [AllParts.PartResults] {
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return legoPartsResult
         } else {
             return legoPartsResult.filter { result in
-                result.name.range(of: searchText, options: .caseInsensitive) != nil
+                result.name?.range(of: searchText, options: .caseInsensitive) != nil
             }
         }
     }

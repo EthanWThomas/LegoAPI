@@ -10,13 +10,13 @@ import Foundation
 extension InventoryLegoParts {
     
     struct Part: Codable {
-        let partNumber: String
-        let name: String
-        let partID: Int
+        let partNumber: String?
+        let name: String?
+        let partID: Int?
         let partURL: String?
         let partImageURL: String?
-        let externalID: ExternalIDs
-        let color: ColorOFPart
+        let externalID: ExternalIDs?
+        let color: ColorOFPart?
         
         enum CodingKeys: String, CodingKey {
             case partNumber = "part_num"
@@ -43,11 +43,11 @@ extension InventoryLegoParts {
         }
         
         struct ColorOFPart: Codable {
-            let id: Int
-            let name: String
-            let rgb: String
-            let isTrans: Bool
-            let externalIds: ColorExternalIDs
+            let id: Int?
+            let name: String?
+            let rgb: String?
+            let isTrans: Bool?
+            let externalIds: ColorExternalIDs?
             
             enum CodingKeys: String, CodingKey {
                 case id
