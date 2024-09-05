@@ -12,6 +12,8 @@ class InventoryLegoPartVM: ObservableObject {
     @Published private(set) var isLoading = true
     @Published private(set) var errorMessage: String?
     @Published var setNumber = ""
+    
+    @Published var setInventoryPart: [InventoryLegoParts.PartResult]?
     @Published var inventoryPartResults = [InventoryLegoParts.PartResult]()
     
     private let apiManager = RebrickableAPI()
@@ -36,6 +38,21 @@ class InventoryLegoPartVM: ObservableObject {
                 print("No Result Found \(error)")
                 self?.errorMessage = error.localizedDescription
                 self?.isLoading = false
+            }
+        }
+    }
+    
+    func getInventoryPart(with setNumber: String) {
+        isLoading = true
+        
+        Task {
+            do {
+                self.setInventoryPart = try await apiManager.getInvetoryPartInASet(setNum: setNumber).results
+                self.isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
             }
         }
     }

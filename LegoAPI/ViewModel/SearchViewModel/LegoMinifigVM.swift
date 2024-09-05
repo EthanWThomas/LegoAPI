@@ -14,7 +14,6 @@ class LegoMinifigSearchVM: ObservableObject {
     
     @Published var searchText = ""
     @Published var themeId = ""
-    @Published var setNumber = ""
     
     @Published var minifigeResult = [Lego.LegoResults]()
     @Published var minifige: [Lego.LegoResults]?

@@ -64,7 +64,11 @@ struct MinifigSrceen: View {
     
     func listItem(for minifiger: Lego.LegoResults) -> some View {
         NavigationLink {
-            MinifigerDetailView(lego: minifiger, minifigesInetViewModel: setViewModel, parViewModel: partViewModel)
+            MinifigerDetailView(
+                lego: minifiger,
+                minifigesInetViewModel: setViewModel,
+                partViewModel: partViewModel
+            )
         } label: {
             MinifigerPreviewView(
                 name: minifiger.name ?? "no name",

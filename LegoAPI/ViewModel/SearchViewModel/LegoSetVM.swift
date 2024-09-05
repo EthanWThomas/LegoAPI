@@ -18,7 +18,9 @@ class LegoSetVM: ObservableObject {
     
     private let apiManager = RebrickableAPI()
     
-    var searchLegoSet: [LegoSet.SetResults] { getsearchResult() }
+    var searchLegoSet: [LegoSet.SetResults]? {
+        get { return getsearchResult() }
+    }
     
     @MainActor
     func seacrhLegoSet() {
@@ -29,7 +31,7 @@ class LegoSetVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-                let results = try await self?.apiManager.getAllLegoSets(with: searchText).results
+                let results = try await self?.apiManager.seacrhAllLegoSets(with: searchText).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in
@@ -47,21 +49,7 @@ class LegoSetVM: ObservableObject {
         isLoading = true
         Task {
             do {
-                self.legoSet = try await apiManager.getAllLegoSets(with: searchText).results
-                isLoading = false
-            } catch {
-                print(error)
-                self.errorMessage = error.localizedDescription
-                self.isLoading = false
-            }
-        }
-    }
-    
-    func getSpecificLegoSet() {
-        isLoading = true
-        Task {
-            do {
-                self.legoSet = try await apiManager.getSpecificSet(with: searchText).results
+                self.legoSet = try await apiManager.getAllLegoSet().results
                 isLoading = false
             } catch {
                 print(error)

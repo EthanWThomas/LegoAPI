@@ -13,8 +13,8 @@ struct LegoSet: Codable {
     struct SetResults: Codable {
         let setNumber: String?
         let name: String?
-        let year: String?
-        let themeID: String?
+        let year: Int?
+        let themeID: Int?
         let numberOfParts: Int?
         let setImageURL: String?
         let setURL: String?

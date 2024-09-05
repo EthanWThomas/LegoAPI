@@ -9,18 +9,15 @@ import SwiftUI
 
 struct MinifigerDetailView: View {
     var lego: Lego.LegoResults
-//    var part: MinifigerPart.MinifigerPartResults
-//    var set: LegoSet.SetResults
     
-    @State var setExpanded = false
-    @State var inventoryExpanded = true
+    @State var setExpanded = true
+    @State var inventoryExpanded = false
     
     @StateObject var minifigesInetViewModel: MinifigInSetCameInVM
-    @StateObject var parViewModel: PartsVM
+    @StateObject var partViewModel: PartsVM
     
     var body: some View {
         title
-        Spacer()
         List {
             minifigInSet
             partInventory
@@ -28,46 +25,37 @@ struct MinifigerDetailView: View {
         .listStyle(.sidebar)
         .onAppear {
             minifigesInetViewModel.getMinifigInSetCameIn(figNumber: lego.setNum ?? "no fig number")
-            parViewModel.getminifigePart(figNumber: lego.setNum ?? "no fig number")
+            partViewModel.getminifigePart(figNumber: lego.setNum ?? "no fig number")
         }
     }
     
     private var title: some View {
-        MinifigerPreviewView(name: lego.name ?? "No name", setNum: lego.setNum ?? "No set number", numberOfpart: lego.numberOfPart ?? 0, seturl: URL(string: lego.setImageURL ?? "Unknown"))
-        
+        VStack(alignment: .center) {
+            displayUrlImage(url: lego.setImageURL)
+                .frame(width: 200, height: 200)
+            Text(lego.name ?? "No Name")
+                .font(.headline.bold())
+            Text(lego.setNum ?? "No Set Number")
+                .font(.subheadline)
+        }
     }
     
     private var minifigInSet: some View {
         Section(isExpanded: $setExpanded) {
             if let set = minifigesInetViewModel.minifigInSet {
-                VStack {
-                    ForEach(set, id: \.setNum) { legoSet in
-                        AsyncImage(url: URL(string: legoSet.setImageURL ?? "Unkown")) { phase in
-                            switch phase {
-                                case .empty:
-                                    ProgressView()
-                                case .success(let image):
-                                    image
-                                        .resizable()
-                                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                                default:
-                                    Image("yellowMinifiger")
-                                        .resizable()
-                            }
-                        }
-                        .frame(width: 50, height: 50)
-                        Text(legoSet.name ?? "no name")
-                        HStack {
-                            Text(legoSet.name ?? "no name")
-                            Text(legoSet.setNum ?? "no set number")
-                            Text(legoSet.numberOfPart?.formatted(.number) ?? "0")
-                        }
+                ForEach(set, id: \.setNum) { legoSet in
+                    HStack(alignment: .top, spacing: 12) {
+                        displayUrlImage(
+                            url: legoSet.setImageURL
+                        )
+                        .frame(width: 150, height: 150)
+                        setDetailDisplay(
+                            name: legoSet.name ?? "No Name",
+                            fig: legoSet.setNum ?? "No Set number",
+                            inventory: legoSet.numberOfPart ?? 0,
+                            set: legoSet.setImageURL
+                        )
                     }
-                    .frame(width: 100, height: 100)
-                    .background(
-                        Rectangle()
-                            .stroke(Color.gray)
-                    )
                 }
                 .onSubmit {
                     minifigesInetViewModel.getMinifigInSetCameIn(figNumber: lego.setNum ?? "no name")
@@ -79,17 +67,11 @@ struct MinifigerDetailView: View {
         }
     }
     
-    private var detail: some View {
-        HStack {
-            
-        }
-    }
-    
     private var partInventory: some View {
         Section(isExpanded: $inventoryExpanded) {
-            if let part = parViewModel.part {
+            if let part = partViewModel.part {
                 VStack {
-                    ForEach(part ,id: \.name) { legoPart in
+                    ForEach(part ,id: \.partNumber) { legoPart in
                         AsyncImage(url: URL(string: legoPart.partImageUrl ?? "Unknown")) { phase in
                             switch phase {
                                 case .empty:
@@ -97,24 +79,53 @@ struct MinifigerDetailView: View {
                                 case .success(let image):
                                     image
                                         .resizable()
-                                        .clipShape(RoundedRectangle(cornerRadius: 5))
                                 default:
                                     Image("yellowMinifiger")
                                         .resizable()
                             }
                         }
-                        .frame(width: 100, height: 100)
+                        .frame(width: 80, height: 80)
                         Text(legoPart.name ?? "no name")
                         Text(legoPart.partNumber ?? "no part number")
                     }
                 }
                 .onSubmit {
-                    parViewModel.getminifigePart(figNumber: lego.setNum ?? "no fig number")
+                    partViewModel.getminifigePart(figNumber: lego.setNum ?? "no fig number")
                 }
             }
         } header: {
             Text("Inventory")
                 .font(.headline)
+        }
+    }
+    
+    
+    private func setDetailDisplay(name: String, fig number: String, inventory: Int, set url: String?) -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(name)
+                .font(.headline.bold())
+            Text("Set number-\(number)")
+                .font(.subheadline)
+                .font(.system(size: 12))
+            Text("(\(inventory.formatted(.number)) of parts)")
+                .font(.subheadline)
+        }
+    }
+    
+    private func displayUrlImage(url: String?) -> some View {
+        HStack {
+            AsyncImage(url: URL(string: url ?? "Unknown")) { phase in
+                switch phase {
+                    case .empty:
+                        ProgressView()
+                    case .success(let image):
+                        image
+                            .resizable()
+                    default:
+                        Image("legoLogo")
+                            .resizable()
+                }
+            }
         }
     }
 }

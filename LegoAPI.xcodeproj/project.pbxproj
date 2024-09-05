@@ -131,8 +131,8 @@
 				79936C702C6B524100609F33 /* MinifigSrceen.swift */,
 				79E40C8B2C772E1000348DFF /* MinifigerDetailView.swift */,
 				79E40C7F2C75DADB00348DFF /* LegoSetView.swift */,
-				79E40C892C772D6E00348DFF /* LegoPartView.swift */,
 				79E40C8D2C772EB400348DFF /* LegoSetDetailView.swift */,
+				79E40C892C772D6E00348DFF /* LegoPartView.swift */,
 				79E40C7E2C75DAA200348DFF /* Componets */,
 				79936C6B2C670B3000609F33 /* previewView */,
 			);
