@@ -14,12 +14,14 @@ class InventoryLegoPartVM: ObservableObject {
     @Published var setNumber = ""
     
     @Published var setInventoryPart: [InventoryLegoParts.PartResult]?
+    @Published var getInventoryMinifiger: [Lego.LegoResults]?
     @Published var inventoryPartResults = [InventoryLegoParts.PartResult]()
     
     private let apiManager = RebrickableAPI()
     
     var searchLegoSetInventory: [InventoryLegoParts.PartResult] { getsearchResult() }
     
+    @MainActor
     func searchPartNumber() {
         isLoading = true
         
@@ -42,12 +44,29 @@ class InventoryLegoPartVM: ObservableObject {
         }
     }
     
+    @MainActor
     func getInventoryPart(with setNumber: String) {
         isLoading = true
         
         Task {
             do {
                 self.setInventoryPart = try await apiManager.getInvetoryPartInASet(setNum: setNumber).results
+                self.isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
+        }
+    }
+    
+    @MainActor
+    func getInventoryMinifigerInSet(with setNumber: String) {
+        isLoading = true
+        
+        Task {
+            do {
+                self.getInventoryMinifiger = try await apiManager.getInvetoryMinifigerInASet(with: setNumber).results
                 self.isLoading = false
             } catch {
                 print(error)

@@ -21,6 +21,7 @@ struct MinifigerDetailView: View {
         List {
             minifigInSet
             partInventory
+
         }
         .listStyle(.sidebar)
         .onAppear {

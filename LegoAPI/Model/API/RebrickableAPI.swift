@@ -64,6 +64,7 @@ struct RebrickableAPI {
         }
     }
     
+    // MARK: - Set request
     // Get a list of all Inventory Parts in this Minifig.
     func getMinifigerInvetory(setNum: String) async throws -> AllParts {
         guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/\(setNum)/parts/?key=\(RebrickableAPI.apiKey)")
@@ -82,7 +83,6 @@ struct RebrickableAPI {
         }
     }
     
-    // MARK: - Get all Minifigs in all the sets it came in
     func getAllMinifigsSetCameIn(setNumber: String) async throws -> Lego {
         
         guard let url = URL(string: "https://rebrickable.com/api/v3/lego/minifigs/\(setNumber)/sets/?key=\(RebrickableAPI.apiKey)")
@@ -121,6 +121,7 @@ struct RebrickableAPI {
     }
     
     // MARK: - Get a list of all Colors a Part has appeared
+    // Get a list of all Colors a Part has appeared
     func getListOfAllColorAndPart(partNum: String) async throws -> PartsAndColor {
         guard let url = URL(string: "https://rebrickable.com/api/v3/lego/parts/\(partNum)/colors/?key=\(RebrickableAPI.apiKey)")
         else { throw RequstError.failedToCreateURL }
@@ -206,6 +207,25 @@ struct RebrickableAPI {
         
         switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
             case 200: return try JSONDecoder().decode(InventoryLegoParts.self, from: data)
+            case 201, 204, 400, 401, 403, 404, 429: throw try JSONDecoder().decode(ErrorResponse.self, from: data)
+            default: throw ResponseError.unownedErrorOccurred
+        }
+    }
+    
+    // MARK: - Get a list of all Inventory Minifigs in this Set.
+    func getInvetoryMinifigerInASet(with setNumber: String) async throws -> Lego {
+        guard let url = URL(string: "https://rebrickable.com/api/v3/lego/sets/\(setNumber)/minifigs/?key=\(RebrickableAPI.apiKey)")
+                
+        else { throw RequstError.failedToCreateURL }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        switch (response as? HTTPURLResponse)?.statusCode ?? 0 {
+            case 200: return try JSONDecoder().decode(Lego.self, from: data)
             case 201, 204, 400, 401, 403, 404, 429: throw try JSONDecoder().decode(ErrorResponse.self, from: data)
             default: throw ResponseError.unownedErrorOccurred
         }

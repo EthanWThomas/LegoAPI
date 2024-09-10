@@ -190,8 +190,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "minifigInSet"
             landmarkType = "24">
          </BreakpointContent>
@@ -210,64 +210,6 @@
             endingLineNumber = "52"
             landmarkName = "getPart()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C0E8A6B2-E952-4968-8C77-BE8E056178F7 - b05f7da0f7fc0977"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getPart() -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52">
-               </Location>
-               <Location
-                  uuid = "C0E8A6B2-E952-4968-8C77-BE8E056178F7 - ebdb7d6ab58aca6c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getPart() -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52">
-               </Location>
-               <Location
-                  uuid = "C0E8A6B2-E952-4968-8C77-BE8E056178F7 - 18894b4deea5cd75"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getPart() -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52">
-               </Location>
-               <Location
-                  uuid = "C0E8A6B2-E952-4968-8C77-BE8E056178F7 - 4d50b1a465316372"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getPart() -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -312,8 +254,8 @@
             filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "seacrhAllLegoSets(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -328,8 +270,8 @@
             filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "seacrhAllLegoSets(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -344,8 +286,8 @@
             filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "getSpecificSet(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -360,8 +302,8 @@
             filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "getSpecificSet(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -392,8 +334,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -424,8 +366,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "minifigInSet"
             landmarkType = "24">
          </BreakpointContent>
@@ -540,64 +482,6 @@
             endingLineNumber = "95"
             landmarkName = "getAllMinifigsSetCameIn(setNumber:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "57CC3AE5-4B42-46B6-958F-22F3D25CD6AB - 85f7869a003b0a1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for LegoAPI.RebrickableAPI.getAllMinifigsSetCameIn(setNumber: Swift.String) async throws -&gt; LegoAPI.Lego"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95">
-               </Location>
-               <Location
-                  uuid = "57CC3AE5-4B42-46B6-958F-22F3D25CD6AB - d50e959261323776"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for LegoAPI.RebrickableAPI.getAllMinifigsSetCameIn(setNumber: Swift.String) async throws -&gt; LegoAPI.Lego"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95">
-               </Location>
-               <Location
-                  uuid = "57CC3AE5-4B42-46B6-958F-22F3D25CD6AB - 5dc248c04a20361c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for LegoAPI.RebrickableAPI.getAllMinifigsSetCameIn(setNumber: Swift.String) async throws -&gt; LegoAPI.Lego"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95">
-               </Location>
-               <Location
-                  uuid = "57CC3AE5-4B42-46B6-958F-22F3D25CD6AB - f9c4f02557d5c01b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for LegoAPI.RebrickableAPI.getAllMinifigsSetCameIn(setNumber: Swift.String) async throws -&gt; LegoAPI.Lego"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -626,8 +510,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "partInventory"
             landmarkType = "24">
          </BreakpointContent>
@@ -642,8 +526,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "partInventory"
             landmarkType = "24">
          </BreakpointContent>
@@ -658,8 +542,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "partInventory"
             landmarkType = "24">
          </BreakpointContent>
@@ -678,64 +562,6 @@
             endingLineNumber = "68"
             landmarkName = "getminifigePart(figNumber:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "276F2932-99B9-4A31-A081-A9096EC3EDBB - 84b7f5fd73c2e4aa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getminifigePart(figNumber: Swift.String) -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68">
-               </Location>
-               <Location
-                  uuid = "276F2932-99B9-4A31-A081-A9096EC3EDBB - d458f380128d4c41"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getminifigePart(figNumber: Swift.String) -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68">
-               </Location>
-               <Location
-                  uuid = "276F2932-99B9-4A31-A081-A9096EC3EDBB - cd7a5e45456be0a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getminifigePart(figNumber: Swift.String) -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68">
-               </Location>
-               <Location
-                  uuid = "276F2932-99B9-4A31-A081-A9096EC3EDBB - 71038a19ac4762a9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in LegoAPI.PartsVM.getminifigePart(figNumber: Swift.String) -&gt; ()"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/ViewModel/SearchViewModel/PartsVM.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -748,8 +574,8 @@
             filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "getMinifigerInvetory(setNum:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -758,22 +584,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5CFDB4DB-A052-4D14-991B-8D93D1FAA03A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getMinifigerInvetory(setNum:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9370D8C-2471-4845-9D4E-E00AC2B9C47E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -789,6 +599,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E9370D8C-2471-4845-9D4E-E00AC2B9C47E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getMinifigerInvetory(setNum:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "96DF7774-53CA-4054-B2A1-2D9294E3DE1C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -796,90 +622,16 @@
             filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "getMinifigerInvetory(setNum:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "96DF7774-53CA-4054-B2A1-2D9294E3DE1C - 7149fae4e516fde1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for LegoAPI.RebrickableAPI.getMinifigerInvetory(setNum: Swift.String) async throws -&gt; LegoAPI.AllParts"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-               <Location
-                  uuid = "96DF7774-53CA-4054-B2A1-2D9294E3DE1C - a7265a4b496c50d6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for LegoAPI.RebrickableAPI.getMinifigerInvetory(setNum: Swift.String) async throws -&gt; LegoAPI.AllParts"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-               <Location
-                  uuid = "96DF7774-53CA-4054-B2A1-2D9294E3DE1C - bd867310f06f39e3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for LegoAPI.RebrickableAPI.getMinifigerInvetory(setNum: Swift.String) async throws -&gt; LegoAPI.AllParts"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-               <Location
-                  uuid = "96DF7774-53CA-4054-B2A1-2D9294E3DE1C - 3e3a856f5f8dbfc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for LegoAPI.RebrickableAPI.getMinifigerInvetory(setNum: Swift.String) async throws -&gt; LegoAPI.AllParts"
-                  moduleName = "LegoAPI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ethanthomas/Documents/App%20dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/API/RebrickableAPI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BDA04FF9-3BF4-475D-9CB6-6937E0E95541"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "getMinifigerInvetory(setNum:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FD4E5E25-C4C9-43C6-815D-E7174D3F3B9C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -895,7 +647,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3ED6CAD5-CC87-4E00-B757-148F0A93A31E"
+            uuid = "FD4E5E25-C4C9-43C6-815D-E7174D3F3B9C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -911,7 +663,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B3DF984-14D8-4B2C-9C24-00F927D2B07B"
+            uuid = "3ED6CAD5-CC87-4E00-B757-148F0A93A31E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -927,6 +679,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "9B3DF984-14D8-4B2C-9C24-00F927D2B07B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LegoAPI/Model/API/RebrickableAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getMinifigerInvetory(setNum:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "99160F8B-D3F9-4F56-A472-6A0BCB4756A7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -934,8 +702,8 @@
             filePath = "LegoAPI/View/MinifigerDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -943,119 +711,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D608BC26-F814-4710-8871-01140E2B76D2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "minifigInSet"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5FD00307-F309-4C82-82C9-D62E5DF51466"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "minifigInSet"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E88AC91F-2C48-4A39-84C6-FCF308B2480A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "minifigInSet"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F098FFB8-7943-4886-8131-2245232514D2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "minifigInSet"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E2CD7E27-1CE5-4007-B372-14D4503A7E22"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "minifigInSet"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8A06AB62-2FB0-4774-BC72-5F40D5C54E09"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "minifigInSet"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "216DD0EE-070D-4F42-B45E-925EC3EC3EAF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LegoAPI/View/MinifigerDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "partInventory"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3069D7F1-721D-4589-ABDF-3E18B27FBF84"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1071,6 +727,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3069D7F1-721D-4589-ABDF-3E18B27FBF84"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LegoAPI/View/MinifigerDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "partInventory"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "A81476C2-55E3-44A3-9652-6ECBA841A6AD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1078,8 +750,8 @@
             filePath = "LegoAPI/View/LegoSetDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -1094,8 +766,8 @@
             filePath = "LegoAPI/View/LegoSetDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "setInventory"
             landmarkType = "24">
          </BreakpointContent>

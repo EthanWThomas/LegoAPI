@@ -29,10 +29,10 @@ extension InventoryLegoParts {
         }
         
         struct ExternalIDs: Codable {
-            let brickLing: [String]
-            let brickOwl: [String]
-            let ldraw: [String]
-            let lego: [String]
+            let brickLing: [String]?
+            let brickOwl: [String]?
+            let ldraw: [String]?
+            let lego: [String]?
             
             enum CodingKeys: String, CodingKey {
                 case brickLing = "BrickOwl"
