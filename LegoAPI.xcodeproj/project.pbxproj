@@ -36,7 +36,6 @@
 		79E40C8A2C772D6E00348DFF /* LegoPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C892C772D6E00348DFF /* LegoPartView.swift */; };
 		79E40C8C2C772E1000348DFF /* MinifigerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C8B2C772E1000348DFF /* MinifigerDetailView.swift */; };
 		79E40C8E2C772EB400348DFF /* LegoSetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C8D2C772EB400348DFF /* LegoSetDetailView.swift */; };
-		79E40C902C795AC500348DFF /* MinifigDetailPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C8F2C795AC500348DFF /* MinifigDetailPreviewView.swift */; };
 		79E40C922C7960B900348DFF /* MinifigerPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C912C7960B900348DFF /* MinifigerPart.swift */; };
 		79E40C982C8A73F700348DFF /* LegoMOCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E40C972C8A73F700348DFF /* LegoMOCS.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +71,6 @@
 		79E40C892C772D6E00348DFF /* LegoPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoPartView.swift; sourceTree = "<group>"; };
 		79E40C8B2C772E1000348DFF /* MinifigerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinifigerDetailView.swift; sourceTree = "<group>"; };
 		79E40C8D2C772EB400348DFF /* LegoSetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoSetDetailView.swift; sourceTree = "<group>"; };
-		79E40C8F2C795AC500348DFF /* MinifigDetailPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinifigDetailPreviewView.swift; sourceTree = "<group>"; };
 		79E40C912C7960B900348DFF /* MinifigerPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinifigerPart.swift; sourceTree = "<group>"; };
 		79E40C972C8A73F700348DFF /* LegoMOCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoMOCS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				79936CB92C6DECBA00609F33 /* MinifigerPreviewView.swift */,
-				79E40C8F2C795AC500348DFF /* MinifigDetailPreviewView.swift */,
 			);
 			path = previewView;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 				79936C632C65786B00609F33 /* PartsVM.swift in Sources */,
 				79936C4E2C63644C00609F33 /* LegoCDModel.xcdatamodeld in Sources */,
 				79936C382C62E4F600609F33 /* ContentView.swift in Sources */,
-				79E40C902C795AC500348DFF /* MinifigDetailPreviewView.swift in Sources */,
 				79936C522C640E2800609F33 /* Color.swift in Sources */,
 				79936C612C65730C00609F33 /* LegoSetVM.swift in Sources */,
 				79E40C8C2C772E1000348DFF /* MinifigerDetailView.swift in Sources */,

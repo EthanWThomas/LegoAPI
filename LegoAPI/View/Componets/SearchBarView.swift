@@ -34,10 +34,6 @@ struct SearchBarView: View {
                 .onTapGesture {
                     isPickerVisible.toggle()
                 }
-//            Picker("Seletct theme", selection: $seacrhText) {
-//                
-//            }
-
         }
         .font(.headline)
         .padding()

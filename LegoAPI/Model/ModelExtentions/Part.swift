@@ -15,7 +15,7 @@ extension InventoryLegoParts {
         let partID: Int?
         let partURL: String?
         let partImageURL: String?
-        let externalID: ExternalIDs?
+//        let externalID: ExternalIDs?
         let color: ColorOFPart?
         
         enum CodingKeys: String, CodingKey {
@@ -24,7 +24,7 @@ extension InventoryLegoParts {
             case partID = "part_cat_id"
             case partURL = "part_url"
             case partImageURL = "part_img_url"
-            case externalID = "external_ids"
+//            case externalID = "external_ids"
             case color
         }
         

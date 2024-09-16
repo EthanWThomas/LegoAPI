@@ -15,6 +15,8 @@ class LegoSetVM: ObservableObject {
     @Published var searchText = ""
     @Published var legoSetResults = [LegoSet.SetResults]()
     @Published var legoSet: [LegoSet.SetResults]?
+    @Published var legoSetMOCS: [LegoMOCS.LegoMOCSResult]?
+    @Published var mocs: LegoMOCS.LegoMOCSResult?
     
     private let apiManager = RebrickableAPI()
     
@@ -45,6 +47,7 @@ class LegoSetVM: ObservableObject {
         }
     }
     
+    @MainActor
     func getLegoSet() {
         isLoading = true
         Task {
@@ -54,6 +57,21 @@ class LegoSetVM: ObservableObject {
             } catch {
                 print(error)
                 self.errorMessage = error.localizedDescription
+                self.isLoading = false
+            }
+        }
+    }
+    
+    @MainActor
+    func getAlternateBuilds(with setNumber: String) {
+        isLoading = true
+        Task {
+            do {
+                self.legoSetMOCS = try await apiManager.getAlternateLegoSet(set: setNumber).results
+                isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage =  error.localizedDescription
                 self.isLoading = false
             }
         }

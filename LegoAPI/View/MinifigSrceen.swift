@@ -9,17 +9,16 @@ import SwiftUI
 
 struct MinifigSrceen: View {
     
-    @StateObject var viewModel = LegoMinifigSearchVM()
-    @StateObject var setViewModel = MinifigInSetCameInVM()
-    @StateObject var partViewModel = PartsVM()
-   
-    let columns: [GridItem] = Array(repeating: GridItem(.fixed(100), spacing: 5), count: 2)
+    @StateObject private var viewModel = LegoMinifigSearchVM()
+    @StateObject private var setViewModel = MinifigInSetCameInVM()
+    @StateObject private var partViewModel = PartsVM()
     
+    @State private var isSearching = false
     // TODO: - add a custom search bar and theme picker
     var body: some View {
         NavigationStack {
             minifigSelected
-            Section("Minifiger") {
+            Section("Minifigs") {
                 listOfMinifig
             }
         }
@@ -34,7 +33,6 @@ struct MinifigSrceen: View {
 //                    Text(theme.id.formatted(.number))
 //                }
 //            }
-            .pickerStyle(.menu)
         }
         .onSubmit {
             viewModel.searchMinifig()
@@ -80,7 +78,6 @@ struct MinifigSrceen: View {
     }
 }
 
-
-#Preview {
-    MinifigSrceen()
-}
+//#Preview {
+//    MinifigSrceen()
+//}

@@ -11,6 +11,8 @@ struct LegoSetView: View {
     @StateObject var viewModel = LegoSetVM()
     @StateObject var inventoryViewModel = InventoryLegoPartVM()
     
+    @State private var isSearching = false
+    
     var body: some View {
         NavigationStack {
             VStack {

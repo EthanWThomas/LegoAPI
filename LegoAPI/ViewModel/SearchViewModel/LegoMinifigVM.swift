@@ -22,7 +22,7 @@ class LegoMinifigSearchVM: ObservableObject {
     
     private let apiManager = RebrickableAPI()
     
-    var searchLegoMinifig: [Lego.LegoResults]? { // Optional return type
+    var searchLegoMinifig: [Lego.LegoResults]? { 
             get { return getsearchResult() }
         }
     

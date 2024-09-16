@@ -32,7 +32,7 @@ struct MinifigerDetailView: View {
     
     private var title: some View {
         VStack(alignment: .center) {
-            displayUrlImage(url: lego.setImageURL)
+            displayUrlImage(url: lego.setImageURL, failedUrl: "legoLogo")
                 .frame(width: 200, height: 200)
             Text(lego.name ?? "No Name")
                 .font(.headline.bold())
@@ -47,7 +47,7 @@ struct MinifigerDetailView: View {
                 ForEach(set, id: \.setNum) { legoSet in
                     HStack(alignment: .top, spacing: 12) {
                         displayUrlImage(
-                            url: legoSet.setImageURL
+                            url: legoSet.setImageURL, failedUrl: "legoLogo"
                         )
                         .frame(width: 150, height: 150)
                         setDetailDisplay(
@@ -70,24 +70,21 @@ struct MinifigerDetailView: View {
     
     private var partInventory: some View {
         Section(isExpanded: $inventoryExpanded) {
-            if let part = partViewModel.part {
+            if let part = partViewModel.inventoryPart {
                 VStack {
-                    ForEach(part ,id: \.partNumber) { legoPart in
-                        AsyncImage(url: URL(string: legoPart.partImageUrl ?? "Unknown")) { phase in
-                            switch phase {
-                                case .empty:
-                                    ProgressView()
-                                case .success(let image):
-                                    image
-                                        .resizable()
-                                default:
-                                    Image("yellowMinifiger")
-                                        .resizable()
-                            }
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150, maximum: 300), spacing: 1)]) {
+                        ForEach(part ,id: \.id) { legoPart in
+                            inventoryMinifigerPartDisplay(
+                                part: legoPart.part.partNumber,
+                                part: legoPart.quantity,
+                                url: legoPart.part.partImageURL
+                            )
+                            .frame(width: 160, height: 200)
+                            .background(
+                                Rectangle()
+                                    .stroke(Color.gray)
+                            )
                         }
-                        .frame(width: 80, height: 80)
-                        Text(legoPart.name ?? "no name")
-                        Text(legoPart.partNumber ?? "no part number")
                     }
                 }
                 .onSubmit {
@@ -100,6 +97,36 @@ struct MinifigerDetailView: View {
         }
     }
     
+    private func inventoryMinifigerPartDisplay(
+        part number: String?,
+        part quantity: Int,
+        url: String?) -> some View {
+        VStack {
+            AsyncImage(url: URL(string: url ?? "Unknown")) { phase in
+                switch phase {
+                    case .empty:
+                        ProgressView()
+                    case .success(let image):
+                        image
+                            .resizable()
+                    default:
+                        Image("redBrick")
+                            .resizable()
+                }
+            }
+            .frame(width: 100, height: 100)
+            .padding()
+            HStack {
+                Text("\(quantity.formatted(.number)) x")
+                    .font(.headline)
+                Text(number ?? "No Name")
+                    .font(.headline)
+                    .foregroundStyle(Color("minifigerPartColor"))
+                    .lineLimit(1)
+                    .padding()
+            }
+        }
+    }
     
     private func setDetailDisplay(name: String, fig number: String, inventory: Int, set url: String?) -> some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -113,7 +140,7 @@ struct MinifigerDetailView: View {
         }
     }
     
-    private func displayUrlImage(url: String?) -> some View {
+    private func displayUrlImage(url: String?, failedUrl: String) -> some View {
         HStack {
             AsyncImage(url: URL(string: url ?? "Unknown")) { phase in
                 switch phase {
@@ -123,7 +150,7 @@ struct MinifigerDetailView: View {
                         image
                             .resizable()
                     default:
-                        Image("legoLogo")
+                        Image(failedUrl)
                             .resizable()
                 }
             }

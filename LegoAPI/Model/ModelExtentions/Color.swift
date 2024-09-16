@@ -10,7 +10,7 @@ import Foundation
 extension InventoryLegoParts.Part.ColorOFPart {
     
     struct ColorExternalIDs: Codable {
-        let brickLink: BrickLink?
+        let brickLink: [BrickLink]?
         let brickOwl: BrickOwl?
         let lego: Lego?
         let peeron: Peeron?
