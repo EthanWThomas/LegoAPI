@@ -13,7 +13,6 @@ class PartsVM: ObservableObject {
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
-    @Published var setNumber = ""
     
     @Published var legoPartsResult = [AllParts.PartResults]()
     @Published var part: [AllParts.PartResults]?

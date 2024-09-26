@@ -74,7 +74,6 @@ struct MinifigSrceen: View {
                 seturl: URL(string: minifiger.setImageURL ?? "Unknown")
             )
         }
-
     }
 }
 

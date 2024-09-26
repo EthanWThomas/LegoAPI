@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79801B682CA37DE400681C20 /* LegoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79801B672CA37DE400681C20 /* LegoDataModel.swift */; };
 		79936C362C62E4F600609F33 /* LegoAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79936C352C62E4F600609F33 /* LegoAPIApp.swift */; };
 		79936C382C62E4F600609F33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79936C372C62E4F600609F33 /* ContentView.swift */; };
 		79936C3A2C62E4F700609F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79936C392C62E4F700609F33 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79801B672CA37DE400681C20 /* LegoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoDataModel.swift; sourceTree = "<group>"; };
 		79936C322C62E4F600609F33 /* LegoAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegoAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79936C352C62E4F600609F33 /* LegoAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoAPIApp.swift; sourceTree = "<group>"; };
 		79936C372C62E4F600609F33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79801B662CA37DA000681C20 /* LegoDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				79801B672CA37DE400681C20 /* LegoDataModel.swift */,
+				79936C4C2C63644C00609F33 /* LegoCDModel.xcdatamodeld */,
+			);
+			path = LegoDataModel;
+			sourceTree = "<group>";
+		};
 		79936C292C62E4F600609F33 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +164,7 @@
 		79936C452C62E59000609F33 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				79801B662CA37DA000681C20 /* LegoDataModel */,
 				79936C462C62E59D00609F33 /* API */,
 				79936C4B2C63642900609F33 /* ModelExtentions */,
 				79936C472C62E6CD00609F33 /* Lego.swift */,
@@ -163,7 +175,6 @@
 				79936C572C6414BA00609F33 /* AllParts.swift */,
 				79936C5B2C6553AD00609F33 /* PartsAndColor.swift */,
 				79E40C912C7960B900348DFF /* MinifigerPart.swift */,
-				79936C4C2C63644C00609F33 /* LegoCDModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +305,7 @@
 				79936C632C65786B00609F33 /* PartsVM.swift in Sources */,
 				79936C4E2C63644C00609F33 /* LegoCDModel.xcdatamodeld in Sources */,
 				79936C382C62E4F600609F33 /* ContentView.swift in Sources */,
+				79801B682CA37DE400681C20 /* LegoDataModel.swift in Sources */,
 				79936C522C640E2800609F33 /* Color.swift in Sources */,
 				79936C612C65730C00609F33 /* LegoSetVM.swift in Sources */,
 				79E40C8C2C772E1000348DFF /* MinifigerDetailView.swift in Sources */,
@@ -532,8 +544,7 @@
 				79936C4D2C63644C00609F33 /* LegoCDModel.xcdatamodel */,
 			);
 			currentVersion = 79936C4D2C63644C00609F33 /* LegoCDModel.xcdatamodel */;
-			name = LegoCDModel.xcdatamodeld;
-			path = "/Users/ethanthomas/Documents/App dev/SwiftUI_2024/LegoAPI/LegoAPI/Model/LegoCDModel.xcdatamodeld";
+			path = LegoCDModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

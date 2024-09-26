@@ -22,7 +22,7 @@ struct InventoryLegoParts: Codable {
         let setNumber: String
         let quantity: Int
         let isSpare: Bool
-        let elementId: String
+        let elementId: String?
         let numberOfSet: Int
         
         enum CodingKeys: String, CodingKey {

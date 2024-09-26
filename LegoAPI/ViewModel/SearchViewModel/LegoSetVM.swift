@@ -16,7 +16,6 @@ class LegoSetVM: ObservableObject {
     @Published var legoSetResults = [LegoSet.SetResults]()
     @Published var legoSet: [LegoSet.SetResults]?
     @Published var legoSetMOCS: [LegoMOCS.LegoMOCSResult]?
-    @Published var mocs: LegoMOCS.LegoMOCSResult?
     
     private let apiManager = RebrickableAPI()
     

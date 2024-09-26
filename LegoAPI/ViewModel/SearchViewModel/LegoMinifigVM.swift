@@ -17,15 +17,12 @@ class LegoMinifigSearchVM: ObservableObject {
     
     @Published var minifigeResult = [Lego.LegoResults]()
     @Published var minifige: [Lego.LegoResults]?
-    
-    
-    
+
     private let apiManager = RebrickableAPI()
     
     var searchLegoMinifig: [Lego.LegoResults]? { 
             get { return getsearchResult() }
         }
-    
     
     @MainActor
     func searchMinifig() {
@@ -97,7 +94,6 @@ class LegoMinifigSearchVM: ObservableObject {
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
             return minifigeResult
         } else {
-            // TODO: fix it
             return minifigeResult.filter { result in
                 result.name?.range(of: searchText, options: .caseInsensitive) != nil
             }

@@ -37,9 +37,7 @@ struct LegoSetDetailView: View {
             .onAppear {
                 inventoryViewModel.getInventoryPart(with: Legoset.setNumber ?? "No set number")
                 inventoryViewModel.getInventoryMinifigerInSet(with: Legoset.setNumber ?? "No set number")
-                if let mocs = letSetViewModel.mocs {
-                    letSetViewModel.getAlternateBuilds(with: mocs.setNumber ?? "No set number")
-                }
+                letSetViewModel.getAlternateBuilds(with: Legoset.setNumber ?? "No set number")
             }
         }
     }
@@ -95,9 +93,7 @@ struct LegoSetDetailView: View {
                     )
                 }
                 .onSubmit {
-                    if let mocs = letSetViewModel.mocs {
-                        letSetViewModel.getAlternateBuilds(with: mocs.setNumber ?? "No set number")
-                    }
+                    letSetViewModel.getAlternateBuilds(with: Legoset.setNumber ?? "No Set number")
                 }
             }
         } header: {
