@@ -1,15 +1,14 @@
 //
-//  SearchBarView.swift
+//  MinifigureSearchBar.swift
 //  LegoAPI
 //
-//  Created by Ethan Thomas on 8/21/24.
+//  Created by Ethan Thomas on 9/26/24.
 //
 
 import SwiftUI
 
-struct SearchBarView: View {
+struct MinifigureSearchBar: View {
     @Binding var searchText: String
-    @State private var isPickerVisible = false
     
     var body: some View {
         HStack {
@@ -17,8 +16,7 @@ struct SearchBarView: View {
                 .foregroundStyle(
                     searchText.isEmpty ? Color.secondary : Color.accentColor
                 )
-            
-            TextField("Search by name or set number...", text: $searchText)
+            TextField("Search Minifigure", text: $searchText)
                 .foregroundStyle(Color.accentColor)
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
@@ -31,13 +29,11 @@ struct SearchBarView: View {
                         }
                     ,alignment: .trailing
                 )
-                .onTapGesture {
-                    isPickerVisible.toggle()
-                }
         }
         .font(.headline)
         .padding()
-//        .frame(width: 250, height: 80)
+        .padding()
+        .frame(width: 200, height: 50)
         .background(
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
@@ -49,5 +45,5 @@ struct SearchBarView: View {
 }
 
 //#Preview {
-//    SearchBarView(seacrhText: $s)
+//    MinifigureSearchBar()
 //}

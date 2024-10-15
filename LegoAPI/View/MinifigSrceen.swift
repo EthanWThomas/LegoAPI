@@ -12,30 +12,40 @@ struct MinifigSrceen: View {
     @StateObject private var viewModel = LegoMinifigSearchVM()
     @StateObject private var setViewModel = MinifigInSetCameInVM()
     @StateObject private var partViewModel = PartsVM()
-    
     @State private var isSearching = false
-    // TODO: - add a custom search bar and theme picker
+
     var body: some View {
         NavigationStack {
-            minifigSelected
-            Section("Minifigs") {
+            searchMinifigure
+            Section("Minifigure") {
                 listOfMinifig
             }
         }
-       
     }
     
-    private var minifigSelected: some View {
-        VStack {
-            SearchBarView(seacrhText: $viewModel.searchText)
-//            Picker("Select theme", selection: $viewModel.searchText) {
-//                ForEach(viewModel.legotheme ?? [], id: \.id) { theme in
-//                    Text(theme.id.formatted(.number))
-//                }
-//            }
+    private var searchMinifigure: some View {
+        HStack(spacing: 1) {
+            MinifigureSearchBar(searchText: $viewModel.searchText)
+            Picker("Select Theme", selection: $viewModel.themeId) {
+                ForEach(LegoThemes.allCases, id: \.id) { theme in
+                    Text(theme.displayName)
+                        .tag(theme.rawValue)
+                        .lineLimit(1)
+                        .tint(Color.black)
+                }
+            }
+            .padding()
+            .frame(width: 170, height: 50)
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.white)
+                    .stroke(Color.gray)
+                    .shadow(color: .primary.opacity(0.15), radius: 10, x: 0, y: 0)
+            )
+            Spacer(minLength: 15)
         }
         .onSubmit {
-            viewModel.searchMinifig()
+            viewModel.searchMinifigWithThemeId()
         }
     }
     
@@ -48,8 +58,7 @@ struct MinifigSrceen: View {
                             .frame(width: 160, height: 200)
                             .background(
                                 Rectangle()
-                                    .stroke(Color.gray)
-                            )
+                                    .stroke(Color.gray))
                     }
                 }
                 .padding()
@@ -58,9 +67,9 @@ struct MinifigSrceen: View {
         .onAppear {
             viewModel.getMinifiger()
         }
-    }    
+    }
     
-    func listItem(for minifiger: Lego.LegoResults) -> some View {
+    private func listItem(for minifiger: Lego.LegoResults) -> some View {
         NavigationLink {
             MinifigerDetailView(
                 lego: minifiger,
@@ -77,6 +86,6 @@ struct MinifigSrceen: View {
     }
 }
 
-//#Preview {
-//    MinifigSrceen()
-//}
+#Preview {
+    MinifigSrceen()
+}

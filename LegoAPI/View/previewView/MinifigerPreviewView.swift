@@ -13,27 +13,29 @@ struct MinifigerPreviewView: View {
     
     let numberOfpart: Int
     let seturl: URL?
-    //    let setImageURL: String
     
     var body: some View {
         VStack {
             displayImageUrl
+                .padding()
             details
         }
     }
     
     var details: some View {
-        VStack(alignment: .leading) {
-            Text(name)
-                .lineLimit(1)
-                .padding()
+        VStack {
+            HStack {
+                Text(name)
+                    .font(.headline.bold())
+                    .lineLimit(1)
+                    .foregroundStyle(Color.black)
+            }
             HStack {
                 Text(setNum)
-                    .foregroundStyle(Color("figNumberColor"))
-//                    .font(.subheadline)
-                    .fontWeight(.light)
                 Text("(\(numberOfpart.formatted(.number)))part")
             }
+            .foregroundStyle(Color.gray)
+            .fontWeight(.light)
         }
     }
     

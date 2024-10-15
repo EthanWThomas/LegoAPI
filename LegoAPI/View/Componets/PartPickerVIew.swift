@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PickerVIew: View {
+struct PartPickerVIew: View {
     
     @Binding var selection: String
     

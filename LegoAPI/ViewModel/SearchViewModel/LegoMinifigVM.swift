@@ -49,7 +49,7 @@ class LegoMinifigSearchVM: ObservableObject {
     }
     
     @MainActor
-    func searchMinifigWithThemeId(with theme: String) {
+    func searchMinifigWithThemeId() {
         isLoading = true
         
         Task { [weak self] in
@@ -60,7 +60,7 @@ class LegoMinifigSearchVM: ObservableObject {
                 guard let themeId = self?.themeId
                 else { return }
                 
-                let results = try await self?.apiManager.getMinifigerWithThemeId(theme: theme, with: searchText).results
+                let results = try await self?.apiManager.searchMinifigureWithThemeId(theme: themeId, with: searchText).results
                 self?.isLoading = false
                 
                 await MainActor.run { [weak self] in

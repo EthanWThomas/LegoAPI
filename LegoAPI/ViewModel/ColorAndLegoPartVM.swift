@@ -14,6 +14,7 @@ class ColorAndLegoPartVM: ObservableObject {
     
     @Published var partNumber = ""
     @Published var colorAndSetPartResults = [PartsAndColor.PartsAndColorResults]()
+    @Published var partWithColorId: [PartsAndColor.PartsAndColorResults]?
     
     private let apiManager = RebrickableAPI()
     
@@ -41,6 +42,21 @@ class ColorAndLegoPartVM: ObservableObject {
                 self?.isLoading = false
             }
         }
+    }
+    
+    func getPartWithColorId(part number: String) {
+        isLoading = true
+        Task {
+            do {
+                self.partWithColorId = try await apiManager.getListOfAllColorAndPart(partNum: number).results
+                self.isLoading = false
+            } catch {
+                print(error)
+                self.errorMessage =  error.localizedDescription
+                self.isLoading = false
+            }
+        }
+
     }
     
     func getsearchResult() -> [PartsAndColor.PartsAndColorResults] {

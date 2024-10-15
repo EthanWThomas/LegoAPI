@@ -19,6 +19,9 @@ struct TabNavigation: View {
             LegoPartView()
                 .tabItem { Label("Part", systemImage: "p.square.fill") }
         }
+//        .onAppear {
+//            UITabBar.appearance().backgroundColor = UIColor.black
+//        }
     }
 }
 

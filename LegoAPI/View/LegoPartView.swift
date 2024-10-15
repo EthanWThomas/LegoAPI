@@ -24,8 +24,8 @@ struct LegoPartView: View {
     
     private var partSelected: some View {
         VStack {
-            SearchBarView(seacrhText: $viewModel.searchText)
-            PickerVIew(selection: $viewModel.searchText)
+            SearchBarView(searchText: $viewModel.searchText)
+//            PartPickerVIew(selection: $viewModel.searchText)
         }
         .onSubmit {
             viewModel.searchLegoParts()

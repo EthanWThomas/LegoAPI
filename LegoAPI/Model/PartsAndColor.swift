@@ -17,7 +17,7 @@ struct PartsAndColor: Codable {
         let numberOfSet: Int
         let numberOfSetParts: Int
         let partImageUrL: String
-        let elements: [String]
+//        let elements: [String]
         
         enum CodingKeys: String, CodingKey {
             case colorID = "color_id"
@@ -25,7 +25,7 @@ struct PartsAndColor: Codable {
             case numberOfSet = "num_sets"
             case numberOfSetParts = "num_set_parts"
             case partImageUrL = "part_img_url"
-            case elements = "elements"
+//            case elements = "elements"
         }
     }
 }

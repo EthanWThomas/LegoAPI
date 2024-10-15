@@ -13,6 +13,7 @@ class PartsVM: ObservableObject {
     @Published private(set) var errorMessage: String?
     
     @Published var searchText = ""
+    @Published var partId = ""
     
     @Published var legoPartsResult = [AllParts.PartResults]()
     @Published var part: [AllParts.PartResults]?
@@ -24,8 +25,8 @@ class PartsVM: ObservableObject {
         get { return getsearchResult() }
     }
     
+    @MainActor
     func searchLegoParts() {
-        
         isLoading = true
         
         Task { [weak self] in
@@ -46,6 +47,33 @@ class PartsVM: ObservableObject {
             }
         }
     }
+    
+    @MainActor
+    func searchLegoPartWithAPartId() {
+        isLoading = true
+        
+        Task { [weak self] in
+            do {
+                guard let searchText = self?.searchText
+                else { return }
+                
+                guard let partId = self?.partId
+                else { return }
+                
+                let result = try await self?.apiManager.searchPartWithId(part: partId, searchTerm: searchText).results
+                self?.isLoading = false
+                
+                await MainActor.run { [weak self] in
+                    self?.legoPartsResult = result!
+                }
+            } catch {
+                print("No Result Found \(error)")
+                self?.errorMessage = error.localizedDescription
+                self?.isLoading = false
+            }
+        }
+    }
+    
     
     @MainActor
     func getPart() {
