@@ -23,11 +23,13 @@ struct LegoPartView: View {
     }
     
     private var partSelected: some View {
-        VStack {
-            SearchBarView(searchText: $viewModel.searchText)
-//            PartPickerVIew(selection: $viewModel.searchText)
+        HStack(spacing: 1) {
+            MinifigureSearchBar(searchText: $viewModel.searchText)
+            PartPickerVIew(selection: $viewModel.partId)
+            Spacer(minLength: 15)
         }
         .onSubmit {
+            viewModel.searchLegoPartWithAPartId()
             viewModel.searchLegoParts()
         }
     }

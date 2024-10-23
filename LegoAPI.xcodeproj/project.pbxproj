@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7941FEAD2CBF291A009F21CC /* PartCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7941FEAC2CBF291A009F21CC /* PartCategory.swift */; };
 		79801B682CA37DE400681C20 /* LegoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79801B672CA37DE400681C20 /* LegoDataModel.swift */; };
 		79801B922CA613A900681C20 /* AllMinifigsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79801B912CA613A900681C20 /* AllMinifigsRequest.swift */; };
 		79801B942CA615D900681C20 /* LegoSetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79801B932CA615D900681C20 /* LegoSetRequest.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7941FEAC2CBF291A009F21CC /* PartCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartCategory.swift; sourceTree = "<group>"; };
 		79801B672CA37DE400681C20 /* LegoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoDataModel.swift; sourceTree = "<group>"; };
 		79801B912CA613A900681C20 /* AllMinifigsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMinifigsRequest.swift; sourceTree = "<group>"; };
 		79801B932CA615D900681C20 /* LegoSetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoSetRequest.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				79936C4F2C63663500609F33 /* Part.swift */,
 				79936C512C640E2800609F33 /* Color.swift */,
 				79801CC92CAF52A500681C20 /* ThemeSearch.swift */,
+				7941FEAC2CBF291A009F21CC /* PartCategory.swift */,
 			);
 			path = ModelExtentions;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				79936C5F2C6559FC00609F33 /* LegoMinifigVM.swift in Sources */,
 				79E40C862C77224900348DFF /* PartPickerVIew.swift in Sources */,
 				79936C502C63663500609F33 /* Part.swift in Sources */,
+				7941FEAD2CBF291A009F21CC /* PartCategory.swift in Sources */,
 				79E40C822C75DAFF00348DFF /* SearchBarView.swift in Sources */,
 				79E40C982C8A73F700348DFF /* LegoMOCS.swift in Sources */,
 				79936C6A2C670B2200609F33 /* InventoryLegoPartVM.swift in Sources */,

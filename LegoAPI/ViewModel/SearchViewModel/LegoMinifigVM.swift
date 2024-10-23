@@ -33,7 +33,6 @@ class LegoMinifigSearchVM: ObservableObject {
                 guard let searchText = self?.searchText
                 else { return }
                 
-
                 let results = try await self?.apiManager.searchMinfigs(with: searchText).results
                 self?.isLoading = false
                 

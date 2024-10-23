@@ -28,6 +28,7 @@ struct LegoSetView: View {
             bottomHStack
         }
         .onSubmit {
+            viewModel.searchLegoSetWithTheme()
             viewModel.searchLegoSetWithAThemeAndYear()
         }
     }
